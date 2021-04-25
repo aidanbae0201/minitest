@@ -40,6 +40,11 @@ void saveData(Product p[], int count){
 
 	//중량 가격 제품명
 	fp= fopen("product.txt","wt");
+	if(fp==NULL)
+		printf("파일없음!\n");
+	for(int i=0;i<count;i++){
+		fprintf(fp,"%d %d %s\n",p[i].weight,p[i].price,p[i].name);
+	}
 	
 	
 	fclose(fp);
